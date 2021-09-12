@@ -65,7 +65,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define DISABLE_RGB_MATRIX_CYCLE_OUT_IN_DUAL
     #define DISABLE_RGB_MATRIX_CYCLE_PINWHEEL
     #define DISABLE_RGB_MATRIX_CYCLE_SPIRAL
-    //#define DISABLE_RGB_MATRIX_DUAL_BEACON
+    #define DISABLE_RGB_MATRIX_DUAL_BEACON
     #define DISABLE_RGB_MATRIX_RAINBOW_BEACON
     #define DISABLE_RGB_MATRIX_RAINBOW_PINWHEELS
     #define DISABLE_RGB_MATRIX_RAINDROPS
@@ -73,8 +73,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define DISABLE_RGB_MATRIX_HUE_BREATHING
     #define DISABLE_RGB_MATRIX_HUE_PENDULUM
     #define DISABLE_RGB_MATRIX_HUE_WAVE
-    //#define DISABLE_RGB_MATRIX_TYPING_HEATMAP
-    //#define DISABLE_RGB_MATRIX_DIGITAL_RAIN
+    #define DISABLE_RGB_MATRIX_TYPING_HEATMAP
+    #define DISABLE_RGB_MATRIX_DIGITAL_RAIN
     #define DISABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
     #define DISABLE_RGB_MATRIX_SOLID_REACTIVE
     #define DISABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE
@@ -86,7 +86,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define DISABLE_RGB_MATRIX_SPLASH
     #define DISABLE_RGB_MATRIX_MULTISPLASH
     #define DISABLE_RGB_MATRIX_SOLID_SPLASH
-    //#define DISABLE_RGB_MATRIX_SOLID_MULTISPLASH
+    #define DISABLE_RGB_MATRIX_SOLID_MULTISPLASH
 
     #define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
     #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 120 // limits maximum brightness of LEDs to 200 out of 255. If not defined maximum brightness is set to 255
