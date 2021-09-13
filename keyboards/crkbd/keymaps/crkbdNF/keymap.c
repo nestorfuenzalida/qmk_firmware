@@ -130,7 +130,7 @@ void set_keylog(uint16_t keycode, keyrecord_t *record) {
 }
 
 void oled_render_keylog(void) {
-    oled_write(keylog_str, false);
+    oled_write_ln(keylog_str, false);
 }
 
 void render_bootmagic_status(bool status) {
@@ -161,6 +161,8 @@ void oled_task_user(void) {
     if (is_keyboard_master()) {
         oled_render_layer_state();
         oled_render_keylog();
+        led_t led_state = host_keyboard_led_state();
+        oled_write_P(led_state.caps_lock ? PSTR("CAPS") : PSTR("    "), false);
     } else {
         oled_render_logo();
     }
