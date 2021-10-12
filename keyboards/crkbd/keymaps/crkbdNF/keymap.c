@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB, _______,    KC_7,    KC_8,    KC_9,  KC_ESC,                       KC_GRV, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PIPE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, _______,    KC_4,    KC_5,    KC_6, KC_PCMM,                      KC_ASTR, KC_SLSH, KC_LPRN, KC_RPRN, KC_CIRC, KC_AMPR,
+      KC_LCTL, _______,    KC_4,    KC_5,    KC_6, _______,                      KC_ASTR, KC_SLSH, KC_LPRN, KC_RPRN, KC_CIRC, KC_AMPR,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|                                       
       KC_LSFT,    KC_0,    KC_1,    KC_2,    KC_3, KC_PDOT,                      KC_PLUS, KC_MINS, KC_LCBR, KC_RCBR, KC_PERC, KC_RALT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -59,9 +59,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      RGB_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PSCR,                      KC_VOLU, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX,
+      RGB_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PSCR,                      KC_VOLU, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, KC_CAPS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, KC_CAPS,                      KC_MUTE, XXXXXXX, XXXXXXX, KC_MSTP, XXXXXXX, XXXXXXX,
+      RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                      KC_MUTE, XXXXXXX, XXXXXXX, KC_MSTP, XXXXXXX, KC_NLCK,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, G(KC_L),                      KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX, G(KC_R), KC_CALC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -162,6 +162,7 @@ void oled_task_user(void) {
         oled_render_layer_state();
         oled_render_keylog();
         led_t led_state = host_keyboard_led_state();
+        oled_write_P(led_state.num_lock ? PSTR("NUM ") : PSTR("    "), false);
         oled_write_P(led_state.caps_lock ? PSTR("CAPS") : PSTR("    "), false);
     } else {
         oled_render_logo();
